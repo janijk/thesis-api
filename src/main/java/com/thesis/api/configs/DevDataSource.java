@@ -16,7 +16,7 @@ public class DevDataSource {
         builder.driverClassName("org.postgresql.Driver");
         builder.url("jdbc:postgresql://localhost:5432/apidb");
         builder.username("postgres");
-        builder.password("postgres");
+        builder.password("api");
         return builder.build();
     }
 }
