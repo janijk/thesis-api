@@ -1,16 +1,20 @@
 package com.thesis.api.models;
 
-import jakarta.persistence.Entity;
-
-import java.sql.Timestamp;
+import jakarta.persistence.*;
 
 @Entity
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(nullable = false, length = 150)
     private String title;
-    //private User author;
+    @Column(nullable = false, length = 17)
     private String isbn;
-    private Timestamp publishDate;
+    @Column(nullable = false, length = 10)
+    private String publishDate;
+
+    //private User author;
     //private Enum type;  // eBook / normal etc
 
 
@@ -38,11 +42,11 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public Timestamp getPublishDate() {
+    public String getPublishDate() {
         return publishDate;
     }
 
-    public void setPublishDate(Timestamp publishDate) {
+    public void setPublishDate(String publishDate) {
         this.publishDate = publishDate;
     }
 }
