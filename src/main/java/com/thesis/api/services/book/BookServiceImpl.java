@@ -1,5 +1,6 @@
 package com.thesis.api.services.book;
 
+import com.thesis.api.exceptions.BookNotFoundException;
 import com.thesis.api.models.Book;
 import com.thesis.api.repositories.BookRepository;
 import jakarta.transaction.Transactional;
@@ -21,7 +22,7 @@ public class BookServiceImpl implements BookService{
 
     @Override
     public Book findById(Integer id) {
-        return null;
+        return bookRepository.findById(id).orElseThrow(()-> new BookNotFoundException(id));
     }
 
     @Override
