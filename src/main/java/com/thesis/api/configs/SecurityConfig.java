@@ -1,19 +1,26 @@
 package com.thesis.api.configs;
 
+import com.thesis.api.filters.AuditLoggingFilterIn;
+import com.thesis.api.filters.AuditLoggingFilterOut;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.authorization.AuthorizationEventPublisher;
+import org.springframework.security.authorization.SpringAuthorizationEventPublisher;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
+import org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.intercept.AuthorizationFilter;
 
 @Configuration
 @Profile("dev")
-@EnableWebSecurity(debug = true)
+@EnableWebSecurity(debug = false) // Debugging off for production environment
 @EnableMethodSecurity
 public class SecurityConfig{
     @Bean
@@ -36,10 +43,15 @@ public class SecurityConfig{
                         // All other requests require authentication
                         .anyRequest().authenticated()
                 )
-                .oauth2ResourceServer(oauth2 -> {
-                    oauth2.jwt()
-                            .jwtAuthenticationConverter(jwtRoleAuthenticationConverter());
-                });
+
+                // Configuration for how to handle JWT authentication
+                .oauth2ResourceServer(oauth2 -> oauth2.jwt()
+                        .jwtAuthenticationConverter(jwtRoleAuthenticationConverter())
+                )
+
+                // Add custom filters for audit logging
+                .addFilterBefore(new AuditLoggingFilterIn(), BearerTokenAuthenticationFilter.class)
+                .addFilterAfter(new AuditLoggingFilterOut(), AuthorizationFilter.class); // Before ??
         return http.build();
     }
 
@@ -59,4 +71,10 @@ public class SecurityConfig{
         return jwtAuthenticationConverter;
     }
 
+    // Bean required for publishing authorization events
+    @Bean
+    public AuthorizationEventPublisher authorizationEventPublisher
+            (ApplicationEventPublisher applicationEventPublisher) {
+        return new SpringAuthorizationEventPublisher(applicationEventPublisher);
+    }
 }

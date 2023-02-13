@@ -39,7 +39,7 @@ public class BookController {
     public ResponseEntity<?> addBook(){
 
         final String baseUrl = ServletUriComponentsBuilder.fromCurrentContextPath().build().toUriString();
-        URI uri = URI.create(baseUrl+"/api/v1/book/"+1/*ID HERE*/);
+        URI uri = URI.create(baseUrl + "/api/v1/book/" + 1/*ID HERE*/);
 
         return ResponseEntity.created(uri).body(uri);
     }
@@ -73,7 +73,16 @@ public class BookController {
     @GetMapping(path = "/test")
     public ResponseEntity<?> test(@AuthenticationPrincipal Jwt jwt, Principal user)    {
 
-        System.out.println(user);
+        System.out.println("******TEST endpoint******");
+
+        return ResponseEntity.ok(user);
+    }
+
+    @GetMapping(path = "/test2")
+    @PreAuthorize("hasAuthority('ROLE_admin')")
+    public ResponseEntity<?> test2(@AuthenticationPrincipal Jwt jwt, Principal user/*, @RequestBody Book book*/)    {
+
+        System.out.println("*****TEST 2 endpoint******");
 
         return ResponseEntity.ok(user);
     }
