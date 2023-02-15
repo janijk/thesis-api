@@ -4,9 +4,11 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
+import java.security.Principal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -20,15 +22,16 @@ public class AuditLoggingFilterOut extends OncePerRequestFilter {
 
         filterChain.doFilter(request, response);
         LocalDateTime time = LocalDateTime.now();
+        Principal auth = SecurityContextHolder.getContext().getAuthentication();
 
-        System.out.println("\nAuditLoggingFilterOut:");
-        System.out.println("     URI: " + request.getRequestURI() +
-                "\n     Method: " + request.getMethod() +
+        System.out.println("\nAuditLoggingFilterOut:" +
+                "\n     URI: " + request.getRequestURI() +
+                "\n     METHOD: " + request.getMethod() +
                 "\n     ORIGIN: " + request.getRemoteHost() +
                 "\n     TIME: " + time.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) +
                 "\n     TOKEN: " + request.getHeader("Authorization") +
                 "\n     STATUS: " + response.getStatus() +
-                "\n     PRINCIPAL: " + request.getUserPrincipal() +
+                "\n     AUTH: " + auth +
                 "\n     USER: " + request.getRemoteUser());
     }
 }

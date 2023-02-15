@@ -2,6 +2,7 @@ package com.thesis.api.configs;
 
 import com.thesis.api.filters.AuditLoggingFilterIn;
 import com.thesis.api.filters.AuditLoggingFilterOut;
+import com.thesis.api.filters.RateLimitFilter;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,6 +18,10 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtGra
 import org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.intercept.AuthorizationFilter;
+import org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter;
+import org.springframework.security.web.session.ForceEagerSessionCreationFilter;
+
+import java.util.Arrays;
 
 @Configuration
 @Profile("dev")
@@ -32,7 +37,7 @@ public class SecurityConfig{
                 // Sessions disabled
                 .sessionManagement().disable()
 
-                // CSRF disabled
+                // CSRF disabled (unnecessary with Bearer authentication)
                 .csrf().disable()
 
                 // Security for HTTP requests enabled
@@ -49,9 +54,10 @@ public class SecurityConfig{
                         .jwtAuthenticationConverter(jwtRoleAuthenticationConverter())
                 )
 
-                // Add custom filters for audit logging
+                // Add custom filters for audit logging and rate limiting
+                .addFilterBefore(new RateLimitFilter(), ForceEagerSessionCreationFilter.class)
                 .addFilterBefore(new AuditLoggingFilterIn(), BearerTokenAuthenticationFilter.class)
-                .addFilterAfter(new AuditLoggingFilterOut(), AuthorizationFilter.class); // Before ??
+                .addFilterAfter(new AuditLoggingFilterOut(), AuthorizationFilter.class);
         return http.build();
     }
 
@@ -71,10 +77,11 @@ public class SecurityConfig{
         return jwtAuthenticationConverter;
     }
 
-    // Bean required for publishing authorization events
+    // Publish Authorization events
     @Bean
     public AuthorizationEventPublisher authorizationEventPublisher
             (ApplicationEventPublisher applicationEventPublisher) {
         return new SpringAuthorizationEventPublisher(applicationEventPublisher);
     }
+
 }

@@ -8,10 +8,9 @@ import org.springframework.stereotype.Component;
 public class AuthenticationEvent {
     @EventListener
     public void onFailure(AuthorizationDeniedEvent failure) {
-        System.out.println("*******************************\nAUTHORIZATION EVENT LISTENER:");
+        System.out.println("*****\nAUTHORIZATION EVENT LISTENER:");
         System.out.println(failure.getAuthorizationDecision());
         System.out.println(failure.getAuthentication().get());
-        //System.out.println("TIME:"+failure.getTimestamp());
-        System.out.println("*******************************");
+        System.out.println("*****");
     }
 }

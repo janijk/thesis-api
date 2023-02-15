@@ -2,6 +2,7 @@ package com.thesis.api.controllers;
 
 import com.thesis.api.models.Book;
 import com.thesis.api.services.book.BookService;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -35,8 +36,8 @@ public class BookController {
     }
 
     // POST: api/v1/book | Add a new book ----------------------------------------------------------------------------
-    @PostMapping
-    public ResponseEntity<?> addBook(){
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> addBook(@RequestBody Book book){
 
         final String baseUrl = ServletUriComponentsBuilder.fromCurrentContextPath().build().toUriString();
         URI uri = URI.create(baseUrl + "/api/v1/book/" + 1/*ID HERE*/);
@@ -62,7 +63,14 @@ public class BookController {
     @DeleteMapping(path = "/{book_id}")
     @PreAuthorize("hasAuthority('ROLE_admin')")
     public ResponseEntity<?> deleteBook(@AuthenticationPrincipal Jwt jwt, @PathVariable int book_id){
+        /*try {
 
+        }
+        catch (MyResourceNotFoundException exc) {
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, “Foo Not Found”, exc);
+        }
+        */
         System.out.println("DONE DELETE "+book_id);
 
         return ResponseEntity.noContent().build();
@@ -73,16 +81,16 @@ public class BookController {
     @GetMapping(path = "/test")
     public ResponseEntity<?> test(@AuthenticationPrincipal Jwt jwt, Principal user)    {
 
-        System.out.println("******TEST endpoint******");
+        System.out.println("****** TEST endpoint ******");
 
         return ResponseEntity.ok(user);
     }
 
     @GetMapping(path = "/test2")
     @PreAuthorize("hasAuthority('ROLE_admin')")
-    public ResponseEntity<?> test2(@AuthenticationPrincipal Jwt jwt, Principal user/*, @RequestBody Book book*/)    {
+    public ResponseEntity<?> test2(@AuthenticationPrincipal Jwt jwt, Principal user)    {
 
-        System.out.println("*****TEST 2 endpoint******");
+        System.out.println("***** TEST 2 endpoint ******");
 
         return ResponseEntity.ok(user);
     }

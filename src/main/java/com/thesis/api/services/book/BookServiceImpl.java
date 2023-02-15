@@ -1,6 +1,6 @@
 package com.thesis.api.services.book;
 
-import com.thesis.api.exceptions.BookNotFoundException;
+import com.thesis.api.exceptions.ResourceNotFoundException;
 import com.thesis.api.models.Book;
 import com.thesis.api.repositories.BookRepository;
 import jakarta.transaction.Transactional;
@@ -16,13 +16,11 @@ public class BookServiceImpl implements BookService{
     private final BookRepository bookRepository;
     private final Logger logger = LoggerFactory.getLogger(BookServiceImpl.class);
 
-    public BookServiceImpl(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
+    public BookServiceImpl(BookRepository bookRepository) {this.bookRepository = bookRepository;}
 
     @Override
     public Book findById(Integer id) {
-        return bookRepository.findById(id).orElseThrow(()-> new BookNotFoundException(id));
+        return bookRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException(id));
     }
 
     @Override
