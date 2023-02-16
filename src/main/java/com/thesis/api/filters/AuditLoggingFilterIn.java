@@ -4,6 +4,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -30,7 +31,7 @@ public class AuditLoggingFilterIn extends OncePerRequestFilter {
                 "\n     TOKEN: " + request.getHeader("Authorization"));
 
         filterChain.doFilter(request, response);
-        Principal authentication = SecurityContextHolder.getContext().getAuthentication();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         LocalDateTime timePost = LocalDateTime.now();
         String auth = response.getHeader("www-authenticate");
@@ -43,7 +44,7 @@ public class AuditLoggingFilterIn extends OncePerRequestFilter {
                     "\n     TIME: " + timePost.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) +
                     "\n     TOKEN: " + request.getHeader("Authorization") +
                     "\n     STATUS: " + response.getStatus() +
-                    "\n     AUTH: " + authentication +
+                    "\n     AUTH: " + authentication.getAuthorities().toString() +
                     "\n     VALIDATION: " + response.getHeader("www-authenticate"));
         }
     }

@@ -43,7 +43,10 @@ public class BookServiceImpl implements BookService{
     public void deleteById(Integer id) {
         if (bookRepository.existsById(id)){
             bookRepository.deleteById(id);
-        }else logger.warn("Book with ID: " + id + " not found");
+        }else {
+            logger.warn("Book with ID: " + id + " not found");
+            throw new ResourceNotFoundException(id);
+        }
     }
 
     @Override
