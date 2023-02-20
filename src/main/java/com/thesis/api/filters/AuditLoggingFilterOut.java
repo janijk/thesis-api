@@ -21,15 +21,15 @@ public class AuditLoggingFilterOut extends OncePerRequestFilter {
     ) throws ServletException, IOException {
 
         filterChain.doFilter(request, response);
-        LocalDateTime time = LocalDateTime.now();
+
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        LocalDateTime time = LocalDateTime.now();
 
         System.out.println("\nAuditLoggingFilterOut:" +
                 "\n     URI: " + request.getRequestURI() +
                 "\n     METHOD: " + request.getMethod() +
                 "\n     ORIGIN: " + request.getRemoteHost() +
                 "\n     TIME: " + time.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) +
-                "\n     TOKEN: " + request.getHeader("Authorization") +
                 "\n     STATUS: " + response.getStatus() +
                 "\n     AUTH: " + auth.getAuthorities().toString() +
                 "\n     USER: " + request.getRemoteUser());

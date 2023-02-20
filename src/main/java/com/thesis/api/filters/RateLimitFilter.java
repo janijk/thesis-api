@@ -19,10 +19,9 @@ public class RateLimitFilter extends OncePerRequestFilter {
             HttpServletResponse response,
             FilterChain filterChain
     ) throws ServletException, IOException {
-
         boolean limit = RateLimitService.returnLimit();
 
-        // If rate limit is exceeded respond with 429 too many requests
+        // If rate limit is exceeded respond with 429 Too many requests
         if (!limit){
             LocalDateTime time = LocalDateTime.now();
 
@@ -33,8 +32,6 @@ public class RateLimitFilter extends OncePerRequestFilter {
                     "\"message\": \"Too Many Requests\"," +
                     "\"path\": \"" + request.getRequestURI() + "\"" +
                     "}");
-
-            System.out.println(sb);
 
             response.resetBuffer();
             response.setStatus(429);

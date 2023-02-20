@@ -9,7 +9,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
-import java.security.Principal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -27,14 +26,13 @@ public class AuditLoggingFilterIn extends OncePerRequestFilter {
                 "\n     URI: " + request.getRequestURI() +
                 "\n     METHOD: " + request.getMethod() +
                 "\n     ORIGIN: " + request.getRemoteHost() +
-                "\n     TIME: " + timePre.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) +
-                "\n     TOKEN: " + request.getHeader("Authorization"));
+                "\n     TIME: " + timePre.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
 
         filterChain.doFilter(request, response);
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-        LocalDateTime timePost = LocalDateTime.now();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String auth = response.getHeader("www-authenticate");
+        LocalDateTime timePost = LocalDateTime.now();
 
         if (auth != null && auth.contains("Bearer")){
             System.out.println("\nAuditLoggingFilter Post:" +
@@ -42,9 +40,8 @@ public class AuditLoggingFilterIn extends OncePerRequestFilter {
                     "\n     METHOD: " + request.getMethod() +
                     "\n     ORIGIN: " + request.getRemoteHost() +
                     "\n     TIME: " + timePost.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) +
-                    "\n     TOKEN: " + request.getHeader("Authorization") +
                     "\n     STATUS: " + response.getStatus() +
-                    "\n     AUTH: " + authentication.getAuthorities().toString() +
+                    "\n     AUTH: " + (authentication!=null? authentication.getAuthorities().toString() : null) +
                     "\n     VALIDATION: " + response.getHeader("www-authenticate"));
         }
     }

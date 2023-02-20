@@ -4,6 +4,9 @@ import com.thesis.api.exceptions.ResourceNotFoundException;
 import com.thesis.api.models.Book;
 import com.thesis.api.repositories.BookRepository;
 import jakarta.transaction.Transactional;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -44,7 +47,6 @@ public class BookServiceImpl implements BookService{
         if (bookRepository.existsById(id)){
             bookRepository.deleteById(id);
         }else {
-            logger.warn("Book with ID: " + id + " not found");
             throw new ResourceNotFoundException(id);
         }
     }
@@ -57,5 +59,11 @@ public class BookServiceImpl implements BookService{
     @Override
     public Set<Book> findAllByTitle(String title) {
         return bookRepository.findAllByTitle(title);
+    }
+
+    @Override
+    public Page<Book> findAllByPage(int page) {
+        Pageable pageable = PageRequest.of(page, 100);
+        return bookRepository.findAll(pageable);
     }
 }

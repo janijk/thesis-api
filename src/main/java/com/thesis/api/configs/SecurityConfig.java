@@ -54,6 +54,11 @@ public class SecurityConfig{
                         .jwtAuthenticationConverter(jwtRoleAuthenticationConverter())
                 )
 
+                /*/ Redirect clients HTTP request to HTTPS
+                .requiresChannel(channel -> channel
+                        .anyRequest().requiresSecure()
+                )*/
+
                 // Add custom filters for audit logging and rate limiting
                 .addFilterBefore(new RateLimitFilter(), ForceEagerSessionCreationFilter.class)
                 .addFilterBefore(new AuditLoggingFilterIn(), BearerTokenAuthenticationFilter.class)
