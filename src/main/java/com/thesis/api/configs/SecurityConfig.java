@@ -1,15 +1,11 @@
 package com.thesis.api.configs;
 
-import com.thesis.api.filters.AuditLoggingFilterIn;
-import com.thesis.api.filters.AuditLoggingFilterOut;
+import com.thesis.api.filters.AuditLoggingFilter;
 import com.thesis.api.filters.RateLimitFilter;
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.authorization.AuthorizationEventPublisher;
-import org.springframework.security.authorization.SpringAuthorizationEventPublisher;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -17,11 +13,7 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtAut
 import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
 import org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.access.intercept.AuthorizationFilter;
-import org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter;
 import org.springframework.security.web.session.ForceEagerSessionCreationFilter;
-
-import java.util.Arrays;
 
 @Configuration
 @Profile("dev")
@@ -61,13 +53,11 @@ public class SecurityConfig{
 
                 // Add custom filters for audit logging and rate limiting
                 .addFilterBefore(new RateLimitFilter(), ForceEagerSessionCreationFilter.class)
-                .addFilterBefore(new AuditLoggingFilterIn(), BearerTokenAuthenticationFilter.class)
-                .addFilterAfter(new AuditLoggingFilterOut(), AuthorizationFilter.class);
+                .addFilterBefore(new AuditLoggingFilter(), BearerTokenAuthenticationFilter.class);
         return http.build();
     }
 
     // Converts JWT claims to Spring security granted authorities
-    @Bean
     public JwtAuthenticationConverter jwtRoleAuthenticationConverter() {
         JwtGrantedAuthoritiesConverter grantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
 
@@ -81,12 +71,4 @@ public class SecurityConfig{
         jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(grantedAuthoritiesConverter);
         return jwtAuthenticationConverter;
     }
-
-    // Publish Authorization events
-    @Bean
-    public AuthorizationEventPublisher authorizationEventPublisher
-            (ApplicationEventPublisher applicationEventPublisher) {
-        return new SpringAuthorizationEventPublisher(applicationEventPublisher);
-    }
-
 }

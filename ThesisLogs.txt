@@ -1,0 +1,415 @@
+
+
+AuditLoggingFilterIn Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:34:19.3854943
+
+AuditLoggingFilterIn Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:34:19.5198212
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer error="invalid_token", error_description="An error occurred while attempting to decode the Jwt: Jwt expired at 2023-02-23T08:43:45Z", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
+
+AuditLoggingFilterIn Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:34:45.4277644
+
+AuditLoggingFilterIn Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:34:45.5094001
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer
+
+AuditLoggingFilterIn Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:40:49.7377537
+
+AuditLoggingFilterIn Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:40:49.8087541
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer
+
+AuditLoggingFilterIn Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:40:58.1645178
+
+AuditLoggingFilterOut:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:40:58.347889
+     STATUS: 200
+     AUTH: [ROLE_ANONYMOUS]
+     USER: null
+
+AuditLoggingFilterOut:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:40:58.347889
+     STATUS: 200
+     AUTH: [ROLE_ANONYMOUS]
+     USER: null
+
+AuditLoggingFilterIn Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:41:06.4799709
+
+AuditLoggingFilterIn Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:41:06.5814413
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer error="invalid_token", error_description="An error occurred while attempting to decode the Jwt: Jwt expired at 2023-02-23T08:43:45Z", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:44:25.1480843
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:44:25.3146712
+     STATUS: 200
+     AUTH: [ROLE_ANONYMOUS]
+     USER: null
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:44:32.4150921
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:44:32.4822085
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book/1
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:44:45.5648759
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book/1
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:44:45.6825115
+     STATUS: 403
+     AUTH: [ROLE_user]
+     VALIDATION: Bearer error="insufficient_scope", error_description="The request requires higher privileges than provided by the access token.", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book/1
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:44:50.5489048
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book/1
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:44:50.5489048
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer error="invalid_token", error_description="An error occurred while attempting to decode the Jwt: Malformed payload", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:58:12.6773005
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T14:58:12.6852332
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:01:01.5530895
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:01:01.6306645
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:02:08.3197733
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:02:08.367018
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer error="invalid_token", error_description="An error occurred while attempting to decode the Jwt: Malformed payload", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:09:06.8954295
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:09:06.9403631
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer error="invalid_token", error_description="An error occurred while attempting to decode the Jwt: Malformed payload", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:09:15.9709063
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:09:16.0468802
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:09:38.0746109
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:09:38.2645104
+     STATUS: 200
+     AUTH: [ROLE_ANONYMOUS]
+     USER: null
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:15:15.4594137
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:15:15.5424602
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:15:48.7688887
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:15:48.9494558
+     STATUS: 200
+     AUTH: [ROLE_ANONYMOUS]
+     USER: null
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:27:37.0326028
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:27:37.1092069
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:28:18.5331034
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:28:18.6771027
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:28:50.5683077
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:28:50.6086423
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer error="invalid_token", error_description="An error occurred while attempting to decode the Jwt: Malformed payload", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:29:02.858337
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:29:02.8603353
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer error="invalid_token", error_description="An error occurred while attempting to decode the Jwt: Malformed payload", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:29:14.4538577
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:29:14.6444604
+     STATUS: 200
+     AUTH: [ROLE_ANONYMOUS]
+     USER: null
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book/1
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:29:41.0081686
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book/1
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:29:41.1193259
+     STATUS: 403
+     AUTH: [ROLE_user]
+     VALIDATION: Bearer error="insufficient_scope", error_description="The request requires higher privileges than provided by the access token.", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book/1
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:29:50.9924711
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book/1
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:29:50.9944719
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer error="invalid_token", error_description="An error occurred while attempting to decode the Jwt: Malformed payload", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book/1
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:40:49.5818116
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book/1
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:40:49.6162947
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer error="invalid_token", error_description="An error occurred while attempting to decode the Jwt: Malformed payload", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book/1
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:42:37.2693006
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book/1
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:42:37.3223428
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer error="invalid_token", error_description="An error occurred while attempting to decode the Jwt: Malformed payload", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:43:45.5117532
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-24T15:43:45.6211372
+     STATUS: 401
+     AUTH: null
+     VALIDATION: Bearer

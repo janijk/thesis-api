@@ -59,7 +59,14 @@ public class BookController {
     // PUT: api/v1/book/{book_id} | Update entire existing book object -----------------------------------------------
     @PutMapping(path = "/{book_id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> updateBook(@RequestBody BookDTO bookDTO, @PathVariable int book_id){
-
+        if (bookDTO.getId() != book_id){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Provided ID's don't match");
+        }
+        try {
+            bookService.update(bookMapper.bookDTOToBook(bookDTO));
+        }catch (ConstraintViolationException ex) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, validationViolations(ex));
+        }
         return ResponseEntity.noContent().build();
     }
 

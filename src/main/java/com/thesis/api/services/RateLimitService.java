@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class RateLimitService {
-    private final static RateLimiter rateLimiter = RateLimiter.create(1d);
+    private final static RateLimiter rateLimiter = RateLimiter.create(0.5d);
 
     public static boolean returnLimit(){
         return rateLimiter.tryAcquire();

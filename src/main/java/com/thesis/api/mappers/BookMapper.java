@@ -19,6 +19,7 @@ public abstract class BookMapper {
 
     @Mapping(target = "id",ignore = true)
     public abstract Book newBookDTOToBook(NewBookDTO newBookDTO);
+    public abstract Book bookDTOToBook(BookDTO bookDTO);
     public abstract BookDTO bookToBookDTO(Book book);
     public abstract Collection<BookDTO> bookToBookDTO(Collection<Book> books);
 
