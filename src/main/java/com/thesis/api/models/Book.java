@@ -16,7 +16,7 @@ public class Book {
     private int id;
     @Column(nullable = false, length = 150)
     @Size(max = 150, message = "Title maximum length is 150 characters")
-    @Pattern(regexp = "^[a-zA-Z0-9-':.,]+$", message = "Title contains forbidden characters")
+    @Pattern(regexp = "^[a-zA-Z0-9-':., ]+$", message = "Title contains forbidden characters")
     @NotBlank(message = "Title cannot be null")
     private String title;
     @Column(nullable = false, length = 17)
