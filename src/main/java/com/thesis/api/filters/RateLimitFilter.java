@@ -23,12 +23,12 @@ public class RateLimitFilter extends OncePerRequestFilter {
 
         // If rate limit is exceeded respond with 429 Too many requests
         if (!limit){
-            StringBuilder sb = new StringBuilder("{" +
-                    "\"timestamp\": \""+ LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) + "\"," +
-                    "\"status\": 429," +
-                    "\"message\": \"Too Many Requests\"," +
-                    "\"path\": \"" + request.getRequestURI() + "\"" +
-                    "}");
+            StringBuilder sb = new StringBuilder("{");
+            sb.append("\"timestamp\": \"").append(LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)).append("\",")
+                    .append("\"status\": 429,")
+                    .append("\"message\": \"Too Many Requests\",")
+                    .append("\"path\": \"").append(request.getRequestURI()).append("\"")
+                    .append("}");
 
             response.resetBuffer();
             response.setStatus(429);

@@ -28,6 +28,6 @@ public class Book {
     @PastOrPresent(message = "Publish date cannot be in the future")
     private Date publishDate;
 
-    //private int price;
-    //private User author;
+    /*private int price;
+    private User author;*/
 }

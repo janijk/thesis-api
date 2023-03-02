@@ -24,7 +24,6 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	implementation 'org.mapstruct:mapstruct:1.5.3.Final'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.3.Final'
-	//implementation 'com.bucket4j:bucket4j-core:8.2.RC2'
 	implementation 'org.postgresql:postgresql'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

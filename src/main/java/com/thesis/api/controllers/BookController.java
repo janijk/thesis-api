@@ -25,6 +25,7 @@ import java.util.Set;
 @RestController
 @CrossOrigin(origins = {
         "http://localhost:3000",
+        "https://web.postman.co"
 })
 @RequestMapping(path = "api/v1/book")
 public class BookController {
@@ -45,12 +46,13 @@ public class BookController {
 
     // POST: api/v1/book | Add a new book ----------------------------------------------------------------------------
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> addBook(@RequestBody NewBookDTO newBookDTO){
+    @PreAuthorize("hasAuthority('ROLE_user')")
+    public ResponseEntity<BookDTO> addBook(@RequestBody NewBookDTO newBookDTO){
         try {
             Book book = bookService.add(bookMapper.newBookDTOToBook(newBookDTO));
             String baseUrl = ServletUriComponentsBuilder.fromCurrentRequestUri().toUriString();
             URI uri = URI.create(baseUrl + "/" + book.getId());
-            return ResponseEntity.created(uri).body(book);
+            return ResponseEntity.created(uri).body(bookMapper.bookToBookDTO(book));
         }catch (ConstraintViolationException ex) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, validationViolations(ex));
         }
@@ -58,6 +60,7 @@ public class BookController {
 
     // PUT: api/v1/book/{book_id} | Update entire existing book object -----------------------------------------------
     @PutMapping(path = "/{book_id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PreAuthorize("hasAuthority('ROLE_user') or hasAuthority('ROLE_admin')")
     public ResponseEntity<?> updateBook(@RequestBody BookDTO bookDTO, @PathVariable int book_id){
         if (bookDTO.getId() != book_id){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Provided ID's don't match");
@@ -78,7 +81,7 @@ public class BookController {
             bookService.deleteById(book_id);
             return ResponseEntity.noContent().build();
         }catch (ResourceNotFoundException ex) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Book not found ");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, ex.getMessage());
         }
     }
 
@@ -91,7 +94,7 @@ public class BookController {
     private String validationViolations(ConstraintViolationException e){
         Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
         StringBuilder sb = new StringBuilder();
-        violations.forEach(v-> sb.append(v.getMessage() + ", "));
+        violations.forEach(v-> sb.append(v.getMessage()).append(", "));
         sb.delete(sb.length()-2,sb.length());
         return sb.toString();
     }

@@ -667,3 +667,1154 @@ AuditLoggingFilter Post:
      USER: null
      AUTH: null
      MSG: Bearer error="invalid_token", error_description="An error occurred while attempting to decode the Jwt: Malformed payload", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-27T11:41:31.9962718
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-27T11:41:32.2491914
+     STATUS: 403
+     USER: 5c25a8fb-95ae-4d52-8bb4-f3f06b6c2427
+     AUTH: [ROLE_admin]
+     MSG: Bearer error="insufficient_scope", error_description="The request requires higher privileges than provided by the access token.", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: PUT
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-27T11:41:42.6652366
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: PUT
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-27T11:41:42.670235
+     STATUS: 405
+     USER: 5c25a8fb-95ae-4d52-8bb4-f3f06b6c2427
+     AUTH: [ROLE_admin]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book/1
+     METHOD: PUT
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-27T11:41:53.0059247
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book/1
+     METHOD: PUT
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-27T11:41:53.0189584
+     STATUS: 400
+     USER: 5c25a8fb-95ae-4d52-8bb4-f3f06b6c2427
+     AUTH: [ROLE_admin]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book/1
+     METHOD: PUT
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-27T11:42:17.4088032
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book/1
+     METHOD: PUT
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-27T11:42:17.5142055
+     STATUS: 204
+     USER: 5c25a8fb-95ae-4d52-8bb4-f3f06b6c2427
+     AUTH: [ROLE_admin]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book/1
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-27T18:22:53.8645109
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book/1
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-27T18:22:54.058868
+     STATUS: 403
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+     MSG: Bearer error="insufficient_scope", error_description="The request requires higher privileges than provided by the access token.", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book/1
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-27T18:33:37.6165387
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book/1
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-27T18:33:37.8998314
+     STATUS: 204
+     USER: 5c25a8fb-95ae-4d52-8bb4-f3f06b6c2427
+     AUTH: [ROLE_admin]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:10:14.4411564
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:10:14.5252005
+     STATUS: 401
+     USER: null
+     AUTH: null
+     MSG: Bearer token not provided
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:12:03.6110406
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:12:03.8461881
+     STATUS: 200
+     USER: anonymousUser
+     AUTH: [ROLE_ANONYMOUS]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:22:48.721641
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:22:48.9888931
+     STATUS: 200
+     USER: anonymousUser
+     AUTH: [ROLE_ANONYMOUS]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:27:19.2438997
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:27:19.5060257
+     STATUS: 200
+     USER: anonymousUser
+     AUTH: [ROLE_ANONYMOUS]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:28:05.3546141
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:28:05.6093974
+     STATUS: 200
+     USER: anonymousUser
+     AUTH: [ROLE_ANONYMOUS]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:30:23.9262924
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:30:24.1539044
+     STATUS: 200
+     USER: anonymousUser
+     AUTH: [ROLE_ANONYMOUS]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:33:51.5238838
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:33:51.5456311
+     STATUS: 200
+     USER: anonymousUser
+     AUTH: [ROLE_ANONYMOUS]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:37:56.8298624
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:37:57.1113381
+     STATUS: 200
+     USER: anonymousUser
+     AUTH: [ROLE_ANONYMOUS]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:43:40.3142327
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:43:40.6398388
+     STATUS: 200
+     USER: anonymousUser
+     AUTH: [ROLE_ANONYMOUS]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:53:02.5570528
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:53:03.0241435
+     STATUS: 200
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:53:20.56467
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:53:20.6016654
+     STATUS: 200
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:53:26.8368788
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:53:26.8648821
+     STATUS: 200
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:53:39.5611619
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T13:53:39.5881632
+     STATUS: 200
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T14:17:57.366096
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T14:17:57.5702532
+     STATUS: 200
+     USER: anonymousUser
+     AUTH: [ROLE_ANONYMOUS]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T14:24:16.7412884
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T14:24:16.7582872
+     STATUS: 200
+     USER: anonymousUser
+     AUTH: [ROLE_ANONYMOUS]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T14:25:30.9416372
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T14:25:30.9556363
+     STATUS: 200
+     USER: anonymousUser
+     AUTH: [ROLE_ANONYMOUS]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T15:07:13.5845672
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T15:07:13.7696421
+     STATUS: 200
+     USER: anonymousUser
+     AUTH: [ROLE_ANONYMOUS]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T15:07:19.7146724
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T15:07:19.7401514
+     STATUS: 200
+     USER: anonymousUser
+     AUTH: [ROLE_ANONYMOUS]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T15:14:58.9386579
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T15:14:59.1409166
+     STATUS: 200
+     USER: anonymousUser
+     AUTH: [ROLE_ANONYMOUS]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T15:36:24.9997922
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T15:36:25.1960351
+     STATUS: 200
+     USER: anonymousUser
+     AUTH: [ROLE_ANONYMOUS]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T16:17:37.2709613
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-02-28T16:17:37.3100413
+     STATUS: 200
+     USER: anonymousUser
+     AUTH: [ROLE_ANONYMOUS]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T10:53:05.5697037
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T10:53:05.9079762
+     STATUS: 201
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:42:45.2519143
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:42:45.2930258
+     STATUS: 401
+     USER: null
+     AUTH: null
+     MSG: Bearer error="invalid_token", error_description="An error occurred while attempting to decode the Jwt: Jwt expired at 2023-03-01T08:57:35Z", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:42:49.6044264
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:42:49.651804
+     STATUS: 400
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:44:21.3585908
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:44:21.3585908
+     STATUS: 400
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:44:30.9761089
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:44:31.0086153
+     STATUS: 201
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:44:41.56507
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:44:41.56507
+     STATUS: 400
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:46:38.9352665
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:46:38.9412318
+     STATUS: 400
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:46:49.1809863
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:46:49.1839832
+     STATUS: 400
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:46:57.2111214
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:46:57.2166481
+     STATUS: 400
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:47:07.7740039
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:47:07.778002
+     STATUS: 400
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:47:16.963321
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:47:16.9693195
+     STATUS: 400
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:47:48.8849278
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:47:48.9031847
+     STATUS: 415
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:48:01.1143128
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:48:01.1173145
+     STATUS: 415
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:48:29.7654589
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:48:29.7674577
+     STATUS: 400
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:48:39.0284587
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T11:48:39.0314968
+     STATUS: 415
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:38:44.4343803
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:38:44.4539113
+     STATUS: 415
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:38:48.1024535
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:38:48.1054531
+     STATUS: 415
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:41:19.8680851
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:41:19.9741673
+     STATUS: 415
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:41:23.7503991
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:41:23.7524028
+     STATUS: 415
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:41:34.3648868
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:41:34.4648493
+     STATUS: 400
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:41:44.2791439
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:41:44.2851443
+     STATUS: 400
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:42:09.2337313
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:42:09.4576245
+     STATUS: 400
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:42:13.2862828
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:42:13.2912823
+     STATUS: 400
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:42:23.1809284
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:42:23.1859306
+     STATUS: 400
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:43:34.2509102
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:43:34.3745374
+     STATUS: 415
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:43:41.396799
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:43:41.5603497
+     STATUS: 400
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:43:58.8696237
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:43:58.8766242
+     STATUS: 400
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:44:25.4972427
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:44:25.679643
+     STATUS: 400
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:44:31.3663857
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:44:31.3723883
+     STATUS: 401
+     USER: null
+     AUTH: null
+     MSG: Bearer error="invalid_token", error_description="An error occurred while attempting to decode the Jwt: Jwt expired at 2023-03-01T10:43:30Z", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:45:23.3983062
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:45:23.5192913
+     STATUS: 201
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:48:33.3136367
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T12:48:33.579715
+     STATUS: 400
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book/111111
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T13:35:43.6885267
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book/111111
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T13:35:43.8903326
+     STATUS: 404
+     USER: 5c25a8fb-95ae-4d52-8bb4-f3f06b6c2427
+     AUTH: [ROLE_admin]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book/111111
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T13:36:23.0440913
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book/111111
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T13:36:23.373664
+     STATUS: 404
+     USER: 5c25a8fb-95ae-4d52-8bb4-f3f06b6c2427
+     AUTH: [ROLE_admin]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book/111111
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T13:37:03.6372576
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book/111111
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T13:37:51.4308296
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book/111111
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T13:37:51.7720092
+     STATUS: 404
+     USER: 5c25a8fb-95ae-4d52-8bb4-f3f06b6c2427
+     AUTH: [ROLE_admin]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book/111111
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T13:38:48.9634035
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book/111111
+     METHOD: DELETE
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T13:38:49.2899303
+     STATUS: 404
+     USER: 5c25a8fb-95ae-4d52-8bb4-f3f06b6c2427
+     AUTH: [ROLE_admin]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T13:47:54.4324289
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T13:47:54.5035249
+     STATUS: 200
+     USER: anonymousUser
+     AUTH: [ROLE_ANONYMOUS]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T17:50:04.9975157
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: POST
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-01T17:50:05.1559937
+     STATUS: 400
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T08:53:57.3686015
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T08:53:57.6657205
+     STATUS: 200
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T08:56:22.8501327
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T08:56:22.8796985
+     STATUS: 200
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T08:56:37.6663459
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T08:56:37.6834552
+     STATUS: 200
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T08:56:55.3589129
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T08:56:55.3743074
+     STATUS: 200
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T09:02:47.7676225
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T09:02:47.8066846
+     STATUS: 200
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T09:02:47.8106851
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T09:02:47.8336861
+     STATUS: 200
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T09:04:21.9207931
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T09:04:21.9367953
+     STATUS: 200
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T09:04:21.9477947
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T09:04:21.9607945
+     STATUS: 200
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T09:05:30.1624616
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T09:05:30.1804654
+     STATUS: 200
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T09:05:30.1864684
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T09:05:30.197985
+     STATUS: 200
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T09:06:01.5923797
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T09:06:01.6043798
+     STATUS: 200
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
+
+AuditLoggingFilter Pre:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T09:06:01.6103805
+
+AuditLoggingFilter Post:
+     URI: /api/v1/book
+     METHOD: GET
+     ORIGIN: 0:0:0:0:0:0:0:1
+     TIME: 2023-03-02T09:06:01.6213898
+     STATUS: 200
+     USER: 76441ce5-0728-4cb5-90ef-52b100e882bc
+     AUTH: [ROLE_user]
