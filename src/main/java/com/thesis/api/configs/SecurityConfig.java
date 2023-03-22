@@ -32,6 +32,13 @@ public class SecurityConfig{
                 // CSRF disabled (unnecessary with Bearer authentication)
                 .csrf().disable()
 
+                // Add CSP header
+                .headers(headers -> headers
+                        .contentSecurityPolicy(csp -> csp
+                                .policyDirectives("default-src 'none' ; frame-ancestors 'none' ; sandbox")
+                        )
+                )
+
                 // Security for HTTP requests enabled
                 .authorizeHttpRequests(authorize -> authorize
                         // GET method for /api/v1/book is public
